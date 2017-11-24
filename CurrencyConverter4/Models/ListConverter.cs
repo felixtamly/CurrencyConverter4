@@ -17,7 +17,7 @@ namespace CurrencyConverter4.Models
             foreach (Currency Currency in CurrencyList)
             {
                 double NewRate = 1 / (FreeConverter.Convert(TargetName, Currency.Name, 1));
-                ConvertedList.Add(new Currency(Currency.Name, NewRate));
+                ConvertedList.Add(new Currency(Currency.Name, Math.Round(NewRate, 4)));
             }
             return ConvertedList;
         }

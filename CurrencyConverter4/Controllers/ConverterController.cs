@@ -34,7 +34,7 @@ namespace CurrencyConverter4.Controllers
             }
             double TargetAmount = FreeConverter.Convert(Converter.TargetCurrencyName, Converter.OriginalCurrencyName, Converter.OriginalAmount);
             StringBuilder Result = new StringBuilder();
-            Result.Append(Converter.OriginalAmount + " " + Converter.OriginalCurrencyName + " = " + TargetAmount + " " + Converter.TargetCurrencyName);
+            Result.Append(Converter.OriginalAmount + " " + Converter.OriginalCurrencyName + " = " + String.Format("{0:.##}", TargetAmount) + " " + Converter.TargetCurrencyName);
             TempData["ConversionResult"] = Result.ToString();            
             return RedirectToAction("Index");
         }
