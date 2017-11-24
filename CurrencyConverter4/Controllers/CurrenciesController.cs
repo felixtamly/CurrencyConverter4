@@ -27,8 +27,6 @@ namespace CurrencyConverter4.Controllers
         {
             ListConverter ListConverter = new ListConverter(CurrencyList);
             List<Currency> NewCurrencyList = new List<Currency>();
-            Console.WriteLine("Here");
-            Console.WriteLine(Name);
             NewCurrencyList = ListConverter.Convert(Name);
             TempData["NewList"] = NewCurrencyList;
             return RedirectToAction("Index", "Currencies");

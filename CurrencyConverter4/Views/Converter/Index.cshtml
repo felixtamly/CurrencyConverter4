@@ -2,7 +2,7 @@
     ViewBag.Title = "Currency Converter";
 }
 @using CurrencyConverter4.Models;
-@model CurrencyConverter4.Models.Converter
+@model CurrencyConverter4.Models.ConvertersModel
 
 <h2>Just Convert</h2>
 
@@ -10,11 +10,23 @@
 {
 <fieldset>
     From
-    @Html.TextBoxFor(model => model.OriginalAmount)
-	@Html.ValidationMessageFor(model => model.OriginalAmount)
-	@Html.DropDownListFor(model => model.OriginalCurrencyName, new SelectList(Model.OriginalCurrency, "Text", "Value"))
+    @Html.TextBoxFor(model => model.Converter.OriginalAmount)
+	@Html.DropDownListFor(model => model.Converter.OriginalCurrencyName, new SelectList(Model.Converter.OriginalCurrency, "Text", "Value"))
 	To
-	@Html.DropDownListFor(model => model.TargetCurrencyName, new SelectList(Model.TargetCurrency, "Text", "Value"))
+	@Html.DropDownListFor(model => model.Converter.TargetCurrencyName, new SelectList(Model.Converter.TargetCurrency, "Text", "Value"))
+    <p><input type="submit" value="Convert" /></p>
+</fieldset>
+}
+
+@using (Html.BeginForm("ReverseConvert", "Converter", FormMethod.Post))
+{
+<fieldset>
+    To
+    @Html.TextBoxFor(model => model.ReverseConverter.TargetAmount)
+	@Html.DropDownListFor(model => model.ReverseConverter.TargetCurrencyName, new SelectList(Model.ReverseConverter.TargetCurrency, "Text", "Value"))
+	From
+    @Html.DropDownListFor(model => model.ReverseConverter.OriginalCurrencyName, new SelectList(Model.ReverseConverter.OriginalCurrency, "Text", "Value"))
+
     <p><input type="submit" value="Convert" /></p>
 </fieldset>
 }

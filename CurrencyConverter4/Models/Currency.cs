@@ -12,7 +12,6 @@ namespace CurrencyConverter4.Models
         }
         public override string ToString()
         {
-            //return string.Format("[Currency: Name={0}, Rate={1}]", Name, String.Format("{0:.####}", Rate));
             return string.Format("[Currency: Name={0}, Rate={1}]", Name, Rate);
         }
     }

@@ -18,5 +18,12 @@ namespace CurrencyConverter4.Models
             double TargetRate = RateFinder.FindRate(TargetCurrency);
             return OriginalValue * TargetRate / OriginalRate;
         }
+        public double ReverseConvert(string TargetCurrency, string OriginalCurrency, double TargetValue)
+        {
+            RateFinder RateFinder = new RateFinder(CurrencyList);
+            double OriginalRate = RateFinder.FindRate(OriginalCurrency);
+            double TargetRate = RateFinder.FindRate(TargetCurrency);
+            return TargetValue * OriginalRate / TargetRate;
+        }
     }
 }

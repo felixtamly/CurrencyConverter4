@@ -1,12 +1,14 @@
 ﻿<Properties StartupConfiguration="{C04EE752-B356-47D7-88B8-7EE25C2AF312}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CurrencyConverter4/Models/ListConverter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CurrencyConverter4/Controllers/ConverterController.cs">
     <Files>
-      <File FileName="CurrencyConverter4/Controllers/ConverterController.cs" Line="34" Column="14" />
-      <File FileName="CurrencyConverter4/Views/Converter/Index.cshtml" Line="7" Column="17" />
-      <File FileName="CurrencyConverter4/Models/Currency.cs" Line="10" Column="30" />
-      <File FileName="CurrencyConverter4/Views/Currencies/Index.cshtml" Line="12" Column="6" />
-      <File FileName="CurrencyConverter4/Controllers/CurrenciesController.cs" Line="31" Column="37" />
-      <File FileName="CurrencyConverter4/Models/ListConverter.cs" Line="20" Column="66" />
+      <File FileName="CurrencyConverter4/Views/Converter/Index.cshtml" Line="29" Column="5" />
+      <File FileName="CurrencyConverter4/Models/Currency.cs" Line="14" Column="10" />
+      <File FileName="CurrencyConverter4/Controllers/ConverterController.cs" Line="61" Column="65" />
+      <File FileName="CurrencyConverter4/Models/FreeConverter.cs" Line="26" Column="60" />
+      <File FileName="CurrencyConverter4/Models/ConvertersModel.cs" Line="7" Column="39" />
+      <File FileName="CurrencyConverter4/Controllers/CurrenciesController.cs" Line="29" Column="67" />
+      <File FileName="CurrencyConverter4/Models/ReverseConverter.cs" Line="13" Column="9" />
+      <File FileName="CurrencyConverter4/Models/Converter.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
