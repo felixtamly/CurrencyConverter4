@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@using CurrencyConverter4.Models;
+@model CurrencyConverter4.Models.Converter
+
+<h2>Currency Converter</h2>
+
+@using (Html.BeginForm("Convert", "Converter", FormMethod.Post))
+{
+<fieldset>
+	From
+    @Html.TextBoxFor(model => model.OriginalAmount)
+	@Html.DropDownList("OriginalName")
+
+	To
+    @Html.DropDownList("TargetName")
+    <p><input type="submit" value="Convert" /></p>
+</fieldset>
+}
+
+@TempData["ConversionResult"]

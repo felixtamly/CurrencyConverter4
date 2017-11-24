@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@using CurrencyConverter4.Models;
+@model IEnumerable<CurrencyConverter4.Models.Currency>
+
+<h2>Currency List</h2>
+<table class="table table-bordered">
+<tr>
+<th>Currency Name</th>
+<th>Rate</th>
+</tr>
+@foreach (var item in Model)
+	{
+        <tr>
+        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+        <td>@Html.DisplayFor(modelItem => item.Rate)</td>
+        </tr>
+    }
+</table>
