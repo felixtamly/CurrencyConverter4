@@ -9,11 +9,12 @@
 @using (Html.BeginForm("Convert", "Converter", FormMethod.Post))
 {
 <fieldset>
-	From
+    From
     @Html.TextBoxFor(model => model.OriginalAmount)
-	@Html.DropDownList("OriginalName")
+	@Html.ValidationMessageFor(model => model.OriginalAmount)
+    @Html.DropDownList("OriginalName")
 
-	To
+    To
     @Html.DropDownList("TargetName")
     <p><input type="submit" value="Convert" /></p>
 </fieldset>

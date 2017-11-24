@@ -1,0 +1,16 @@
+/Users/felixtamly/Projects/CurrencyConverter4/CurrencyConverter4/bin/CurrencyConverter4.dll
+/Users/felixtamly/Projects/CurrencyConverter4/CurrencyConverter4/bin/Microsoft.Web.Infrastructure.dll
+/Users/felixtamly/Projects/CurrencyConverter4/CurrencyConverter4/bin/System.Web.Helpers.dll
+/Users/felixtamly/Projects/CurrencyConverter4/CurrencyConverter4/bin/System.Web.Mvc.dll
+/Users/felixtamly/Projects/CurrencyConverter4/CurrencyConverter4/bin/System.Web.Razor.dll
+/Users/felixtamly/Projects/CurrencyConverter4/CurrencyConverter4/bin/System.Web.WebPages.Deployment.dll
+/Users/felixtamly/Projects/CurrencyConverter4/CurrencyConverter4/bin/System.Web.WebPages.dll
+/Users/felixtamly/Projects/CurrencyConverter4/CurrencyConverter4/bin/System.Web.WebPages.Razor.dll
+/Users/felixtamly/Projects/CurrencyConverter4/CurrencyConverter4/bin/System.Web.Razor.xml
+/Users/felixtamly/Projects/CurrencyConverter4/CurrencyConverter4/bin/System.Web.Helpers.xml
+/Users/felixtamly/Projects/CurrencyConverter4/CurrencyConverter4/bin/System.Web.WebPages.Deployment.xml
+/Users/felixtamly/Projects/CurrencyConverter4/CurrencyConverter4/bin/System.Web.WebPages.xml
+/Users/felixtamly/Projects/CurrencyConverter4/CurrencyConverter4/bin/System.Web.WebPages.Razor.xml
+/Users/felixtamly/Projects/CurrencyConverter4/CurrencyConverter4/bin/System.Web.Mvc.xml
+/Users/felixtamly/Projects/CurrencyConverter4/CurrencyConverter4/obj/Release/CurrencyConverter4.csproj.CoreCompileInputs.cache
+/Users/felixtamly/Projects/CurrencyConverter4/CurrencyConverter4/obj/Release/CurrencyConverter4.dll

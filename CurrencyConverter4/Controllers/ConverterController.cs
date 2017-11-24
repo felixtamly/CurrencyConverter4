@@ -18,24 +18,33 @@ namespace CurrencyConverter4.Controllers
             List<SelectListItem> Items = new List<SelectListItem>();
             foreach (Currency Currency in CurrencyList)
             {
-                Items.Add(new SelectListItem { Text = Currency.Name, Value = Currency.Name});
+                Items.Add(new SelectListItem { Text = Currency.Name, Value = Currency.Name });
             }
             Converter.OriginalName = Items;
             Converter.TargetName = Items;
-            return View (Converter);
+            return View(Converter);
         }
         [HttpPost]
         public ActionResult Convert(double OriginalAmount, string OriginalName, string TargetName)
         {
             FreeConverter FreeConverter = new FreeConverter(CurrencyList);
-            double TargetAmount = FreeConverter.Convert(TargetName, OriginalName, OriginalAmount);
-            StringBuilder Result = new StringBuilder();
-            Result.Append(OriginalAmount + " " + OriginalName + " = " + TargetAmount + " " + TargetName);
-
-            TempData["ConversionResult"] = Result.ToString();
-            //Get Data
-            //Call FreeConverter to convert
-            //Bind TempData
+            if(double.IsNaN(OriginalAmount))
+            {
+                Console.WriteLine(OriginalAmount + " is not a number");
+                ModelState.AddModelError("OriginalAmount", "You must enter a number.");
+            }
+            else if(OriginalAmount < 0)
+            {
+                ModelState.AddModelError("OriginalAmount", "You must enter a positive number.");
+            }
+            else
+            {
+				double TargetAmount = FreeConverter.Convert(TargetName, OriginalName, OriginalAmount);
+				StringBuilder Result = new StringBuilder();
+				Result.Append(OriginalAmount + " " + OriginalName + " = " + TargetAmount + " " + TargetName);
+				
+				TempData["ConversionResult"] = Result.ToString();            
+            }
             return RedirectToAction("Index");
         }
     }
