@@ -12,10 +12,9 @@
     From
     @Html.TextBoxFor(model => model.OriginalAmount)
 	@Html.ValidationMessageFor(model => model.OriginalAmount)
-    @Html.DropDownList("OriginalName")
-
-    To
-    @Html.DropDownList("TargetName")
+	@Html.DropDownListFor(model => model.OriginalCurrencyName, new SelectList(Model.OriginalCurrency, "Text", "Value"))
+	To
+	@Html.DropDownListFor(model => model.TargetCurrencyName, new SelectList(Model.TargetCurrency, "Text", "Value"))
     <p><input type="submit" value="Convert" /></p>
 </fieldset>
 }

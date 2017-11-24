@@ -20,31 +20,22 @@ namespace CurrencyConverter4.Controllers
             {
                 Items.Add(new SelectListItem { Text = Currency.Name, Value = Currency.Name });
             }
-            Converter.OriginalName = Items;
-            Converter.TargetName = Items;
+            Converter.OriginalCurrency = Items;
+            Converter.TargetCurrency = Items;
             return View(Converter);
         }
         [HttpPost]
-        public ActionResult Convert(double OriginalAmount, string OriginalName, string TargetName)
+        public ActionResult Convert(Converter Converter)
         {
             FreeConverter FreeConverter = new FreeConverter(CurrencyList);
-            if(double.IsNaN(OriginalAmount))
+            if(Converter.OriginalAmount < 0.0)
             {
-                Console.WriteLine(OriginalAmount + " is not a number");
-                ModelState.AddModelError("OriginalAmount", "You must enter a number.");
+                Converter.OriginalAmount = 0.0;
             }
-            else if(OriginalAmount < 0)
-            {
-                ModelState.AddModelError("OriginalAmount", "You must enter a positive number.");
-            }
-            else
-            {
-				double TargetAmount = FreeConverter.Convert(TargetName, OriginalName, OriginalAmount);
-				StringBuilder Result = new StringBuilder();
-				Result.Append(OriginalAmount + " " + OriginalName + " = " + TargetAmount + " " + TargetName);
-				
-				TempData["ConversionResult"] = Result.ToString();            
-            }
+            double TargetAmount = FreeConverter.Convert(Converter.TargetCurrencyName, Converter.OriginalCurrencyName, Converter.OriginalAmount);
+            StringBuilder Result = new StringBuilder();
+            Result.Append(Converter.OriginalAmount + " " + Converter.OriginalCurrencyName + " = " + TargetAmount + " " + Converter.TargetCurrencyName);
+            TempData["ConversionResult"] = Result.ToString();            
             return RedirectToAction("Index");
         }
     }
