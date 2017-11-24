@@ -14,7 +14,24 @@ namespace CurrencyConverter4.Controllers
 
         public ActionResult Index()
         {
-            return View (CurrencyList);
+            if(TempData["NewList"] != null)
+            {
+                return View((TempData["NewList"])); 
+            }
+            else
+            {
+				return View (CurrencyList);
+            }
+        }
+        public ActionResult GetNewList(string Name)
+        {
+            ListConverter ListConverter = new ListConverter(CurrencyList);
+            List<Currency> NewCurrencyList = new List<Currency>();
+            Console.WriteLine("Here");
+            Console.WriteLine(Name);
+            NewCurrencyList = ListConverter.Convert(Name);
+            TempData["NewList"] = NewCurrencyList;
+            return RedirectToAction("Index", "Currencies");
         }
     }
 }

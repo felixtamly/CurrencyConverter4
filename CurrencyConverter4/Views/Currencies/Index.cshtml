@@ -13,7 +13,7 @@
 @foreach (var item in Model)
 	{
         <tr>
-        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+		<td>@Html.ActionLink(item.Name, "GetNewList", "Currencies", new {Name = item.Name}, null)</td>
         <td>@Html.DisplayFor(modelItem => item.Rate)</td>
         </tr>
     }

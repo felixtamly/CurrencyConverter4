@@ -78,6 +78,7 @@
     <Compile Include="Models\RateFinder.cs" />
     <Compile Include="Controllers\ConverterController.cs" />
     <Compile Include="Models\Converter.cs" />
+    <Compile Include="Models\ListConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
