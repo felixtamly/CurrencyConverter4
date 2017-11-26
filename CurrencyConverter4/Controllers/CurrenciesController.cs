@@ -20,7 +20,6 @@ namespace CurrencyConverter4.Controllers
                 ViewData["NewAmount"] = TempData["Amount"];
                 ViewData["NewRate"] = TempData["Rate"];
                 TempData.Keep();
-                Console.WriteLine(TempData["NewList"]);
                 return View((TempData["NewList"])); 
             }
             else
@@ -46,7 +45,7 @@ namespace CurrencyConverter4.Controllers
         {
             string Name = (string)TempData["Rate"];
             double Amount = 0.0;
-            if(!Double.TryParse(Request["AmountToConvert"].ToString(), out Amount) || Convert.ToDouble(Request["AmountToConvert"].ToString()) < 0)
+            if(!Double.TryParse(Request["AmountToConvert"].ToString(), out Amount) || Convert.ToDouble(Request["AmountToConvert"].ToString()) <= 0)
             {
                 Amount = 1.0;
             }
