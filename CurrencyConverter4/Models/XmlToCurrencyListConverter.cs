@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml;
 
 namespace CurrencyConverter4.Models
@@ -10,6 +11,7 @@ namespace CurrencyConverter4.Models
         {
             XmlReader XmlReader = XmlReader.Create("https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml");
             List<Currency> CurrencyList = new List<Currency>();
+            List<Currency> SortedCurrencyList = new List<Currency>();
             CurrencyList.Add(new Currency("EUR", 1.0000));
             try
             {
@@ -31,7 +33,8 @@ namespace CurrencyConverter4.Models
             {
                 XmlReader.Close();
             }
-            return CurrencyList;
+            SortedCurrencyList = CurrencyList.OrderBy(c => c.Name).ToList();
+            return SortedCurrencyList;
         }
     }
 }

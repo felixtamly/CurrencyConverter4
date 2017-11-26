@@ -16,10 +16,12 @@ namespace CurrencyConverter4.Controllers
         {
             if(TempData["NewList"] != null)
             {
+                ViewData["NewRate"] = TempData["Rate"];
                 return View((TempData["NewList"])); 
             }
             else
             {
+                ViewData["NewRate"] = "EUR";
 				return View (CurrencyList);
             }
         }
@@ -29,6 +31,7 @@ namespace CurrencyConverter4.Controllers
             List<Currency> NewCurrencyList = new List<Currency>();
             NewCurrencyList = ListConverter.Convert(Name);
             TempData["NewList"] = NewCurrencyList;
+            TempData["Rate"] = Name.ToUpper();
             return RedirectToAction("Index", "Currencies");
         }
     }

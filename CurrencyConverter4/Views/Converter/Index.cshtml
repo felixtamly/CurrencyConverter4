@@ -4,17 +4,18 @@
 @using CurrencyConverter4.Models;
 @model CurrencyConverter4.Models.ConvertersModel
 
-<h2>Just Convert</h2>
+<div class="container">
+<h2 style="font-weight:bold">Just Convert</h2>
 
 @using (Html.BeginForm("Convert", "Converter", FormMethod.Post))
 {
 <fieldset>
-    From
+	From
     @Html.TextBoxFor(model => model.Converter.OriginalAmount)
 	@Html.DropDownListFor(model => model.Converter.OriginalCurrencyName, new SelectList(Model.Converter.OriginalCurrency, "Text", "Value"))
-	To
+    To
 	@Html.DropDownListFor(model => model.Converter.TargetCurrencyName, new SelectList(Model.Converter.TargetCurrency, "Text", "Value"))
-    <p><input type="submit" value="Convert" /></p>
+    <input type="submit" value="Convert" />
 </fieldset>
 }
 
@@ -27,8 +28,9 @@
 	From
     @Html.DropDownListFor(model => model.ReverseConverter.OriginalCurrencyName, new SelectList(Model.ReverseConverter.OriginalCurrency, "Text", "Value"))
 
-    <p><input type="submit" value="Convert" /></p>
+    <input type="submit" value="Convert" />
 </fieldset>
 }
 
 @TempData["ConversionResult"]
+</div>
