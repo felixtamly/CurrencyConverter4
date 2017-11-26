@@ -1,19 +1,32 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "JustConvert";
 }
 @using CurrencyConverter4.Models;
 @model IEnumerable<CurrencyConverter4.Models.Currency>
 
 <div class="container">
-<h2 style="font-weight:bold">Currency List</h2>
+<h2 style="font-weight:bold">JustConvert</h2>
 <h5>Change the base currency by clicking on the currency symbol.</h5>
-<input class="form-control" id="myInput" type="text" placeholder="Type currency to filter...">
+<br>
+
+@using (Html.BeginForm("GetConvertedList", "Currencies", FormMethod.Post))
+	{
+	<div class="input-group">
+	@Html.TextBox("AmountToConvert", null, new { placeholder = "How much " + @ViewData["NewRate"] + " would you like to convert from?", @class = "form-control valid", @data_val = "true"})
+		<span class="input-group-btn">
+    <button class="btn btn-info">Convert</button>
+			</span>
+    </div>
+    }
+<div class="form-group">
+</div>
 <br>
 <table class="table table-bordered">
 <thead>
+<tr><input class="form-control" id="myInput" type="text" placeholder="Type currency to filter..."></tr>
 <tr>
 <th style="width: 50%; text-align:center; font-weight:bold">Currency</th>
-<th style="width: 50%; text-align:center; font-weight:bold">1 @ViewData["NewRate"] =</th>
+<th style="width: 50%; text-align:center; font-weight:bold">@ViewData["NewAmount"] @ViewData["NewRate"] =</th>
 </tr>
 </thead>
 <tbody id="myTable">

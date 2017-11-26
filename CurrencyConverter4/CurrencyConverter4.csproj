@@ -81,6 +81,7 @@
     <Compile Include="Models\ListConverter.cs" />
     <Compile Include="Models\ReverseConverter.cs" />
     <Compile Include="Models\ConvertersModel.cs" />
+    <Compile Include="Models\ConverterListModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />

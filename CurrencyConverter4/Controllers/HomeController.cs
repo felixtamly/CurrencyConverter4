@@ -11,7 +11,7 @@ namespace CurrencyConverter4.Controllers
     {
         public ActionResult Index()
         {
-            return RedirectToAction("Index", "Converter");
+            return RedirectToAction("Index", "Currencies");
         }
     }
 }
